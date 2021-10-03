@@ -7,11 +7,6 @@
     android:backgroundTint="#68655C5C"
     android:gravity="center">
 
-      <androidx.recyclerview.widget.RecyclerView
-          android:id="@+id/recycle"
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"></androidx.recyclerview.widget.RecyclerView>
-
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -44,35 +39,33 @@
             android:background="@color/black"></View>
 
         <EditText
-            android:id="@+id/editTexEmail1"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:hint="Enter Email"></EditText>
 
         <EditText
-            android:id="@+id/editTextPass"
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:hint="Enter Password"></EditText>
 
         <Button
-            android:id="@+id/editbuttonLogin"
+            android:id="@+id/loginBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="10dp"
-            android:onClick="Log"
             android:text="Login"></Button>
 
         <Button
-            android:id="@+id/editbuttonRegister"
+            android:id="@+id/registerBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:backgroundTint="#FFC107"
-            android:onClick="Loading"
             android:text="@string/editbuttonRegister"
             android:textColor="@color/black"
             android:textSize="28dp"
@@ -80,11 +73,11 @@
             app:strokeColor="#881D1D"></Button>
 
         <TextView
+            android:id="@+id/doYou"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_margin="5dp"
-            android:onClick="Loading"
             android:text="Do You Have An Account?"
             android:textColor="@color/teal_700"
             android:textSize="15dp"></TextView>

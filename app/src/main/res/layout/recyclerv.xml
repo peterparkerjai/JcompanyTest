@@ -18,7 +18,7 @@
           app:srcCompat="@android:drawable/ic_input_add"/>
 
       <TextView
-          android:id="@+id/imageView3"
+          android:id="@+id/editTextName"
           android:layout_gravity="center"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -28,14 +28,13 @@
           android:textSize="30sp"></TextView>
 
       <TextView
-          android:id="@+id/imageView4"
+          android:id="@+id/editTextPHNO"
           android:layout_gravity="center"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_marginStart="10dp"
-          android:layout_marginLeft="10dp"
-          android:text="XXXXXXXX08"
-          android:textSize="30sp"></TextView>
+          android:text="@string/xxxxxxxx08"
+          android:textSize="30sp" />
 
 
   </LinearLayout>

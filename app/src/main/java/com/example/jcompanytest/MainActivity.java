@@ -1,60 +1,88 @@
 package com.example.jcompanytest;
 
-import android.accounts.Account;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import  androidx.annotation.Nullable;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
-
-import com.example.jcompanytest.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    RecyclerView recycle;
 
-    Button buttonLogin;
+
+    Button buttonLogin,signup;
     EditText email,password;
-
+    TextView doYou;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        {
-            recycle = (RecyclerView) findViewById(R.id.recycle);
 
-            List<String> list = new ArrayList<>();
-            list.add("a");
-            list.add("b");
-            list.add("c");
-            list.add("a1");
-            list.add("b1");
-            list.add("c1");
+        start();
 
-            recycle.setLayoutManager(new LinearLayoutManager(this));
+    }
 
-            recycle.setAdapter(new MyAdapter(list));
+    public void start(){
+        buttonLogin = findViewById(R.id.loginBtn);
+        signup = findViewById(R.id.registerBtn);
+        email = findViewById(R.id.email);
+        password = findViewById(R.id.password);
+        doYou = findViewById(R.id.doYou);
 
-        }
+        buttonLogin.setOnClickListener(
+                v -> {
+                    String emailId = email.getText().toString();
+                    String pass = password.getText().toString();
+                    boolean access = false;
+                    //Check pass email logic
+                        if(!emailId.isEmpty() && !pass.isEmpty())   access=true;
+                    //
+                    if(access){
+                        List<String> list = new ArrayList<>();
 
+                        list.add("a");
+                        list.add("b");
+                        list.add("c");
+                        list.add("a1");
+                        list.add("b1");
+                        list.add("c1");
+
+                        MyAdapter adapter = new MyAdapter(list);
+
+                        Intent intent = new Intent(MainActivity.this,recycler.class);
+                        intent.putExtra("list", String.valueOf(list));
+                        this.startActivity(intent);
+                    }else{
+                        Toast.makeText(getApplicationContext(),"Wrong Credentials",Toast.LENGTH_LONG).show();
+                    }
+                }
+        );
+
+        signup.setOnClickListener(
+                v -> {
+                    Intent intent = new Intent(MainActivity.this,RegisterActivity.class);
+                    MainActivity.this.startActivity(intent);
+                }
+        );
+
+        doYou.setOnClickListener(
+                v -> {
+
+                }
+        );
     }
 
     public void myAlertDialog() {
