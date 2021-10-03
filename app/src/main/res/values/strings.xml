@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">JcompanyTest</string>
+    <string name="Upload_file">Upload Now</string>
+    <string name="Receive_file">Register</string>
+    <string name="editbuttonLogin">Login</string>
+    <string name="Password">Enter Password></string>
+    <string name="editEmail">E-mail</string>
+    <string name="editbuttonRegister">Rigster Now</string>
+    <string name="onClick">loading</string>
+</resources>
