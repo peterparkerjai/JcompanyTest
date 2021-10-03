@@ -1,5 +1,6 @@
 package com.example.jcompanytest;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,16 +11,16 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-import com.example.jcompanytest.R;
 
 
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyAdptr> {
 
     List<String> list;
 
-    public MyAdapter(List<String> list) {
-        this.list = list;
+    public MyAdapter(List<String> list){
+        this.list=list;
     }
+
 
     @NonNull
     @Override
@@ -50,7 +51,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyAdptr> {
         public MyAdptr(@NonNull View itemView) {
             super(itemView);
 
-            text = (TextView) itemView.findViewById(R.id.edittextname);
+            text = itemView.findViewById(R.id.edittextname);
 
         }
     }
